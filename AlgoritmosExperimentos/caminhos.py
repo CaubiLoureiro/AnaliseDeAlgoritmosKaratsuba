@@ -23,12 +23,14 @@ caminhos.append(caminhok1)
 caminhos.append(caminhok2)
 caminhos.append(caminhok3)
 caminhos.append(caminhok4)
-caminhos.append(caminhok5)
-caminhos.append(caminhok6)
-
 caminhos.append(caminhod1)
 caminhos.append(caminhod2)
 caminhos.append(caminhod3)
 caminhos.append(caminhod4)
+
+
+caminhos.append(caminhok5)
+caminhos.append(caminhok6)
+
 caminhos.append(caminhod5)
 caminhos.append(caminhod6)
