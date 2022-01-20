@@ -2,11 +2,14 @@ import os
 import threading
 import matplotlib.pyplot as plt
 
+from AlgoritmosExperimentos.caminhos import caminhos
+
 
 class Grafico:
-    def __init__(self, karatsuba , direto):
+    def __init__(self, karatsuba , direto, id):
         self.karatsuba = open(karatsuba,'r')
         self.direto = open(direto,'r')
+        self.id = id
 
         self.k = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
         self.temp_ka = []
@@ -43,34 +46,23 @@ class Grafico:
         plt.xlabel("k", fontsize="14")
         plt.ylabel("tempo", fontsize="14")
 
-        plt.show()
-def cria_objeto(k,d):
-    grafico = Grafico(k, d)
+
+        plt.savefig('gráfico' +str(self.id))
+        plt.close()
+
+
+    def limpa_grafo(self):
+        self.temp_ka = []
+        self.temp_dir = []
+        self.k = []
+
+def cria_objeto(k,d,id):
+    grafico = Grafico(k, d,id)
 
 def main ():
-    caminhos = []
-
-    caminhok1 = os.path.abspath('EsperimentosCoefIguais/karatsuba1')
-    caminhok2 = os.path.abspath('EsperimentosCoefIguais/karatsuba2')
-    caminhok3 = os.path.abspath('EsperimentosCoefIguais/karatsuba3')
-    caminhok4 = os.path.abspath('EsperimentosCoefIguais/karatsuba4')
-
-    caminhod1 = os.path.abspath('EsperimentosCoefIguais/mult_direta1')
-    caminhod2 = os.path.abspath('EsperimentosCoefIguais/mult_direta2')
-    caminhod3 = os.path.abspath('EsperimentosCoefIguais/mult_direta3')
-    caminhod4 = os.path.abspath('EsperimentosCoefIguais/mult_direta4')
-
-    caminhos.append(caminhok1)
-    caminhos.append(caminhok2)
-    caminhos.append(caminhok3)
-    caminhos.append(caminhok4)
-    caminhos.append(caminhod1)
-    caminhos.append(caminhod2)
-    caminhos.append(caminhod3)
-    caminhos.append(caminhod4)
-
-    threading.Thread(target=cria_objeto(caminhos[0],caminhos[4])).start()
-    threading.Thread(target=cria_objeto(caminhos[1], caminhos[5])).start()
-    threading.Thread(target=cria_objeto(caminhos[2], caminhos[6])).start()
+    grafico =1
+    for a in range (0,6):
+        cria_objeto(caminhos[a],caminhos[a+6],grafico)
+        grafico +=1
 
 main()
