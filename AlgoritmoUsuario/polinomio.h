@@ -3,7 +3,7 @@
 #include "complex.h"
 
 
-#define printCoef(c) printf("%lf + %lf*i\n",creal(c), cimag(c))
+#define printCoef(c) printf("%.1lf\n",creal(c))
 
 // Representação por coeficientes de um polinômio
 typedef struct Polinomio {
