@@ -5,18 +5,18 @@
 coef_poli* inicializa_poli()
 {
 	int i;
-    complex numero;
+    int numero;
 	coef_poli *Poli = (coef_poli*)malloc(sizeof(coef_poli));  //Aloca memoria para o struct
 
 	printf("Digite o grau do Polinômio :  ");
 	scanf("%d", &(Poli->grau));
 
-	Poli->coef = (complex*)malloc((Poli->grau +1)*sizeof(complex));     // Aloca grau+1 para a caixa de complexo
+	Poli->coef = (int*)malloc((Poli->grau +1)*sizeof(int));     // Aloca grau+1 para a caixa de complexo
 
 	for (i=0; i <= Poli->grau; i++)       // Laço para receber os coeficientes
 	{
 		printf("Digite o coeficiente %d do Polinômio :", i);
-		scanf("%lf",&numero);
+		scanf("%d",&numero);
         Poli->coef[i] =numero;
 	}
 	return Poli;       // Retorna o polinomio de entrada
@@ -163,7 +163,7 @@ coef_poli add_poli(coef_poli p,coef_poli q)
 coef_poli cria_poli(int grau)
 {
     coef_poli Poli;
-    Poli.coef = (complex *)calloc(sizeof(complex), (size_t) (grau + 1));     // Nós alocamos grau + 1 complexos na memória
+    Poli.coef = (int *)calloc(sizeof(int), (size_t) (grau + 1));     // Nós alocamos grau + 1 complexos na memória
 
     Poli.grau = grau;        // O grau deste novo polinômio é grau
 

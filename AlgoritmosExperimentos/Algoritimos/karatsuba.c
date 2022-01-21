@@ -52,6 +52,10 @@ int main(int argc, char const *argv[]) {
         FILE* arquivo = fopen("karatsuba", "a+");
         fprintf(arquivo, "%d/%f\n", k, tempo_total);
         fclose(arquivo);
+        if(k==2){
+            print_poli(&C);
+        }
+
         n=n*2;
         k++;
 

@@ -1,14 +1,13 @@
 #include "stdlib.h"
 #include "stdio.h"
-#include "complex.h"
 
 
-#define printCoef(c) printf("%.1lf\n",creal(c))
+#define printCoef(c) printf("%d\n", c)
 
 // Representação por coeficientes de um polinômio
 typedef struct Polinomio {
   int grau;
-  complex * coef;
+  int * coef;
 }coef_poli;
 
 

@@ -5,16 +5,16 @@
 coef_poli* inicializa_poli(int n)
 {
 	int i;
-    complex numero;
+    int numero;
 	coef_poli *Poli = (coef_poli*)malloc(sizeof(coef_poli));  //Aloca memoria para o struct
 
 	Poli->grau = n;
 
-	Poli->coef = (complex*)malloc((Poli->grau +1)*sizeof(complex));     // Aloca grau+1 para a caixa de complexo
+	Poli->coef = (int*)malloc((Poli->grau +1)*sizeof(int));     // Aloca grau+1 para a caixa de complexo
 
 	for (i=0; i <= Poli->grau; i++)       // Laço para receber os coeficientes
 	{
-        Poli->coef[i] = 2000000000000000000;
+        Poli->coef[i] = 2;
 	}
 	return Poli;       // Retorna o polinomio de entrada
 }
@@ -160,7 +160,7 @@ coef_poli add_poli(coef_poli p,coef_poli q)
 coef_poli cria_poli(int grau)
 {
     coef_poli Poli;
-    Poli.coef = (complex *)calloc(sizeof(complex), (size_t) (grau + 1));     // Nós alocamos grau + 1 complexos na memória
+    Poli.coef = (int *)calloc(sizeof(int), (size_t) (grau + 1));     // Nós alocamos grau + 1 complexos na memória
 
     Poli.grau = grau;        // O grau deste novo polinômio é grau
 

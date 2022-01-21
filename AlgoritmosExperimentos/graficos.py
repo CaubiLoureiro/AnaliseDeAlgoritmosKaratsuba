@@ -2,7 +2,7 @@ import os
 import threading
 import matplotlib.pyplot as plt
 
-from AlgoritmosExperimentos.caminhos import caminhos
+from caminhos import caminhos
 
 
 class Grafico:
@@ -75,7 +75,6 @@ class Grafico:
         self.k = []
 
 def cria_objeto(k,d,id):
-    print(id)
     grafico = Grafico(k, d,id)
 
 def main ():
