@@ -1,6 +1,5 @@
 #include "stdlib.h"
 #include "stdio.h"
-#include "complex.h"
 
 
 #define printCoef(c) printf("%d\n",c)
