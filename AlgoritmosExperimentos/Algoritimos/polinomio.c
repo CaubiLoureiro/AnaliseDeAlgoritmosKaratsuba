@@ -14,7 +14,7 @@ coef_poli* inicializa_poli(int n)
 
 	for (i=0; i <= Poli->grau; i++)       // Laço para receber os coeficientes
 	{
-        Poli->coef[i] = 2;
+        Poli->coef[i] = 3;
 	}
 	return Poli;       // Retorna o polinomio de entrada
 }

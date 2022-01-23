@@ -31,7 +31,6 @@ int main(int argc, char const *argv[]) {
     double s_CPU_inicial, s_total_inicial, s_CPU_final, s_total_final, tempo_total;
 
     
-
     while(k<=15){
 
         A = inicializa_poli(n);
@@ -49,12 +48,11 @@ int main(int argc, char const *argv[]) {
 
         tempo_total = s_CPU_final - s_CPU_inicial;
 
+		
         FILE* arquivo = fopen("karatsuba", "a+");
         fprintf(arquivo, "%d/%f\n", k, tempo_total);
         fclose(arquivo);
-        if(k==2){
-            print_poli(&C);
-        }
+        
 
         n=n*2;
         k++;
